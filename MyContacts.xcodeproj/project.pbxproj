@@ -16,6 +16,7 @@
 		B91188152C3BF06300D0C506 /* MyContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91188142C3BF06300D0C506 /* MyContactsTests.swift */; };
 		B911881F2C3BF06300D0C506 /* MyContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911881E2C3BF06300D0C506 /* MyContactsUITests.swift */; };
 		B91188212C3BF06300D0C506 /* MyContactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91188202C3BF06300D0C506 /* MyContactsUITestsLaunchTests.swift */; };
+		B9A4550A2C3D3A5C00A4E09D /* Name.json in Resources */ = {isa = PBXBuildFile; fileRef = B9A455092C3D3A5C00A4E09D /* Name.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B911881A2C3BF06300D0C506 /* MyContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B911881E2C3BF06300D0C506 /* MyContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactsUITests.swift; sourceTree = "<group>"; };
 		B91188202C3BF06300D0C506 /* MyContactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9A455092C3D3A5C00A4E09D /* Name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Name.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B91187FD2C3BF06200D0C506 /* AppDelegate.swift */,
 				B91187FF2C3BF06200D0C506 /* SceneDelegate.swift */,
 				B91188012C3BF06200D0C506 /* ViewController.swift */,
+				B9A455092C3D3A5C00A4E09D /* Name.json */,
 				B91188032C3BF06200D0C506 /* Main.storyboard */,
 				B91188062C3BF06300D0C506 /* Assets.xcassets */,
 				B91188082C3BF06300D0C506 /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 			files = (
 				B91188072C3BF06300D0C506 /* Assets.xcassets in Resources */,
 				B911880A2C3BF06300D0C506 /* Base in Resources */,
+				B9A4550A2C3D3A5C00A4E09D /* Name.json in Resources */,
 				B91188052C3BF06200D0C506 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
