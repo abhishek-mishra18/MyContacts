@@ -8,6 +8,35 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+   private func readJSON() {
+        let path = Bundle.main.path(forResource: "Name", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        do{
+            let data = try Data(contentsOf: url)
+            let name = try JSONDecoder().decode([String].self, from: data)
+            for items in name {
+                dummyData.append(items)
+            }
+        }
+        catch{}
+    }
+    
+    private func setSearch() {
+        sectionTitle = Array(Set(finalData.compactMap({
+            String($0.prefix(1))
+            })))
+        
+        sectionTitle.sort()
+        
+        for title in sectionTitle{
+            namesDict[title] = [String]()
+        }
+        
+        for name in finalData{
+            namesDict[String(name.prefix((1)))]?.append(name)
+        }
+    }
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,32 +55,12 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
-        let path = Bundle.main.path(forResource: "Name", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        do{
-            let data = try Data(contentsOf: url)
-            let name = try JSONDecoder().decode([String].self, from: data)
-            for items in name {
-                dummyData.append(items)
-            }
-        }
-        catch{}
+        
+        readJSON()
         
         finalData = dummyData
         
-        sectionTitle = Array(Set(finalData.compactMap({
-            String($0.prefix(1))
-            })))
-        
-        sectionTitle.sort()
-        
-        for title in sectionTitle{
-            namesDict[title] = [String]()
-        }
-        
-        for name in finalData{
-            namesDict[String(name.prefix((1)))]?.append(name)
-        }
+        setSearch()
         
         //print(namesDict)
     }
@@ -67,23 +76,8 @@ extension ViewController: UISearchBarDelegate {
             }
         }
 
-        sectionTitle = Array(Set(finalData.compactMap {
-            String($0.prefix(1))
-        }))
+        setSearch()
         
-        sectionTitle.sort()
-        
-        namesDict.removeAll()
-        for title in sectionTitle {
-            namesDict[title] = [String]()
-        }
-        
-        for name in finalData {
-            namesDict[String(name.prefix(1))]?.append(name)
-        }
-        
-        print("Filtered Final Data:", finalData)
-        print("Filtered Names Dict:", namesDict)
         tableView.reloadData()
     }
 }
